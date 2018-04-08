@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@color/colorWhiteBackground"
+    tools:context=".Register"
+    android:gravity="center"
+    android:orientation="vertical">
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/textViewLinkWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Hello"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/appCompatButtonAddFaculty"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/colorTextHint"
+        android:text="Register Faculty"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/appCompatButtonAddStudent"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/colorTextHint"
+        android:text="Register Student"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/appCompatButtonViewFacultyDetails"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextHint"
+        android:text="View Faculty details"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/appCompatButtonViewStudentDetails"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextHint"
+        android:text="View Student details"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/appCompatButtonAddBook"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextHint"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:text="Add Book"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/appCompatButtonViewBook"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextHint"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:text="View Book"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/appCompatButtonUpdateBook"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextHint"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:text="Update Book"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/appCompatButtonDeleteBook"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextHint"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:text="Delete Book"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/appCompatButtonIssueBook"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextHint"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:text="Issue Book"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
