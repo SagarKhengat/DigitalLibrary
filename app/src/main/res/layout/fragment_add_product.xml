@@ -131,21 +131,7 @@
                         android:maxLines="1"
                         android:textColor="@android:color/background_dark" />
                 </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/textInputLayoutProductStore"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp">
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/textInputEditTextProductStore"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:textColor="@android:color/background_dark" />
-                </android.support.design.widget.TextInputLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
