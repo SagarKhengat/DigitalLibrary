@@ -72,15 +72,19 @@ public class FragmentIssueBook extends Fragment {
             @Override
             public void issueOnClick(View v, int position) {
                 Book book = bookList.get(position);
+                mDatabaseHandler.updateBookForIssue(book);
                 Toast.makeText(getActivity(), "Book Issued successfully", Toast.LENGTH_SHORT).show();
                 bookList.remove(book);
+                adapter.notifyDataSetChanged();
             }
 
             @Override
             public void rejectOnClick(View v, int position) {
                 Book book = bookList.get(position);
                 mDatabaseHandler.rejectBook(book);
+                Toast.makeText(getActivity(), "Book Rejected successfully", Toast.LENGTH_SHORT).show();
                 bookList.remove(book);
+                adapter.notifyDataSetChanged();
             }
 
 

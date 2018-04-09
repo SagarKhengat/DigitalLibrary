@@ -212,7 +212,8 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="15dp"
-                android:src="@drawable/digitallibrary"
+                android:src="@drawable/issue"
+                android:background="@drawable/search_shape"
 
                 />
             <ImageView
@@ -220,8 +221,9 @@
                 android:id="@+id/reject"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/digitallibrary"
+                android:layout_marginLeft="150dp"
+                android:src="@drawable/reject"
+                android:background="@drawable/search_shape"
                 android:layout_toRightOf="@id/issue"
                 />
 

@@ -321,7 +321,7 @@ public class DatabaseHandler {
 			for (Faculty user:
 					mListAllStores) {
 
-				if (user.getName().equals(email) && user.getPassword().equals(password))
+				if (user.getFacultyId().equals(email) && user.getPassword().equals(password))
 				{
 					b = true;
 				}
@@ -1300,7 +1300,7 @@ public class DatabaseHandler {
 			for (Book user:
 					mListAllStores) {
 				if(user.getBookStudent() != null) {
-					if (user.getBookStudent().getStudentId().equals(student.getStudentId())) {
+					if (user.getBookStudent().getStudentId().equals(student.getStudentId()) && user.issued()) {
 						bookList.add(user);
 					} else {
 
@@ -1325,7 +1325,7 @@ public class DatabaseHandler {
 			for (Book user:
 					mListAllStores) {
 				if (user.getBookFaculty() != null) {
-					if (user.getBookFaculty().getFacultyId().equals(faculty.getFacultyId())) {
+					if (user.getBookFaculty().getFacultyId().equals(faculty.getFacultyId())&& user.issued()) {
 						bookList.add(user);
 					} else {
 
@@ -1459,6 +1459,29 @@ public class DatabaseHandler {
 		}
 	}
 
+	public void updateBookForIssue(Book book)
+	{
+
+		try
+		{
+			UpdateBuilder<Book, Integer> deleteBuilder = bookDao.updateBuilder();
+			deleteBuilder.updateColumnValue("issued", true);
+
+			deleteBuilder.where().eq("bookId", book.getBookId());
+			deleteBuilder.update();
+
+
+		}
+		catch(OutOfMemoryError e)
+		{
+			e.printStackTrace();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
 	public void deleteBook(Book book)
 	{
 		try {
@@ -1491,6 +1514,7 @@ public class DatabaseHandler {
 			deleteBuilder.updateColumnValue("bookStudent_id", null);
 			deleteBuilder.updateColumnValue("bookFaculty_id", null);
 			deleteBuilder.updateColumnValue("available", true);
+			deleteBuilder.updateColumnValue("issued", false);
 			deleteBuilder.where().eq("bookId", book.getBookId());
 			deleteBuilder.update();
 		} catch(Exception e) {
@@ -1504,6 +1528,7 @@ public class DatabaseHandler {
 			deleteBuilder.updateColumnValue("bookStudent_id", null);
 			deleteBuilder.updateColumnValue("bookFaculty_id", null);
 			deleteBuilder.updateColumnValue("available", true);
+			deleteBuilder.updateColumnValue("issued", false);
 			deleteBuilder.where().eq("bookId", book.getBookId());
 			deleteBuilder.update();
 		} catch(Exception e) {
@@ -1518,6 +1543,7 @@ public class DatabaseHandler {
 			deleteBuilder.updateColumnValue("bookStudent_id", null);
 			deleteBuilder.updateColumnValue("bookFaculty_id", null);
 			deleteBuilder.updateColumnValue("available", true);
+			deleteBuilder.updateColumnValue("issued", false);
 			deleteBuilder.where().eq("bookId", book.getBookId());
 			deleteBuilder.update();
 		} catch(Exception e) {

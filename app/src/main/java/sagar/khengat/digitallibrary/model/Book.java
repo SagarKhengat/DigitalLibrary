@@ -52,6 +52,18 @@ public class Book implements Parcelable {
 
     private boolean available = true;
 
+    @DatabaseField(canBeNull = true)
+
+
+    private boolean issued = false;
+
+    public boolean issued() {
+        return issued;
+    }
+
+    public void setIssued(boolean issued) {
+        this.issued = issued;
+    }
 
     public boolean isAvailable() {
         return available;
@@ -146,6 +158,7 @@ public class Book implements Parcelable {
                 ", bookOriginalPrice=" + bookOriginalPrice +
                 ", bookPages=" + bookPages +
                 ", available=" + available +
+                ", issued=" + issued +
                 '}';
     }
 
@@ -163,6 +176,7 @@ public class Book implements Parcelable {
 
         dest.writeString(bookName);
         dest.writeValue(available);
+        dest.writeValue(issued);
 
         dest.writeValue(bookFaculty);
         dest.writeValue(bookStudent);
@@ -193,6 +207,7 @@ public class Book implements Parcelable {
         bookCategory = in.readString();
         bookOriginalPrice = in.readDouble();
         available = (Boolean)in.readValue(Book.class.getClassLoader());
+        issued = (Boolean)in.readValue(Book.class.getClassLoader());
 
     }
 

@@ -17,6 +17,7 @@ import com.google.gson.Gson;
 
 import sagar.khengat.digitallibrary.Constants.Config;
 
+import sagar.khengat.digitallibrary.activities.ChangePassword;
 import sagar.khengat.digitallibrary.activities.MainActivityForAdmin;
 
 
@@ -99,10 +100,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if(!who.equals("Admin"))
         {
             textViewLinkRegister.setVisibility(View.GONE);
+            textInputEditTextEmail.setHint("User Id");
         }
         else
         {
             textViewLinkRegister.setVisibility(View.VISIBLE);
+            textInputEditTextEmail.setHint("User Name");
         }
     }
 
@@ -143,9 +146,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.textViewLinkForgotPassword:
                 if(who.equals(Config.Admin)) {
-//                    Intent intent = new Intent(activity, ChangePassword.class);
-//                    startActivity(intent);
-//                    finish();
+                    Intent intent = new Intent(activity, ChangePassword.class);
+                    startActivity(intent);
+                    finish();
                 }
                 else
                 {

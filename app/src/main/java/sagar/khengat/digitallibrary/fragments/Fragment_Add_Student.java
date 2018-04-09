@@ -51,6 +51,7 @@ public class Fragment_Add_Student extends Fragment implements View.OnClickListen
     private TextInputLayout textInputLayoutPassword;
     private TextInputLayout textInputLayoutConfirmPassword;
     private TextInputLayout textInputLayoutEmail;
+    private TextInputLayout textInputLayoutBranch;
 
     private TextInputEditText textInputEditTextName;
     private TextInputEditText textInputEditTextId;
@@ -59,6 +60,7 @@ public class Fragment_Add_Student extends Fragment implements View.OnClickListen
     private TextInputEditText textInputEditTextPassword;
     private TextInputEditText textInputEditTextConfirmPassword;
     private TextInputEditText textInputEditTextEmail;
+    private TextInputEditText textInputEditTextBranch;
 
     private AppCompatButton appCompatButtonRegister;
 
@@ -99,6 +101,7 @@ public class Fragment_Add_Student extends Fragment implements View.OnClickListen
         textInputLayoutEmail= (TextInputLayout) view.findViewById(R.id.textInputLayoutCustomerEmail);
         textInputLayoutAddress= (TextInputLayout) view.findViewById(R.id.textInputLayoutCustomerAddress);
         textInputLayoutId= (TextInputLayout) view.findViewById(R.id.textInputLayoutId);
+        textInputLayoutBranch= (TextInputLayout) view.findViewById(R.id.textInputLayoutBranch);
 
         textInputEditTextName = (TextInputEditText) view.findViewById(R.id.textInputEditTextName);
         textInputEditTextContactNo = (TextInputEditText) view.findViewById(R.id.textInputEditTextContact);
@@ -107,6 +110,7 @@ public class Fragment_Add_Student extends Fragment implements View.OnClickListen
         textInputEditTextEmail= (TextInputEditText) view.findViewById(R.id.textInputEditTextCustomerEmail);
         textInputEditTextAddress= (TextInputEditText) view.findViewById(R.id.textInputEditTextCustomerAddress);
         textInputEditTextId= (TextInputEditText) view.findViewById(R.id.textInputEditTextId);
+        textInputEditTextBranch= (TextInputEditText) view.findViewById(R.id.textInputEditTextBranch);
 
         appCompatButtonRegister = (AppCompatButton) view.findViewById(R.id.appCompatButtonRegister);
 
@@ -135,6 +139,9 @@ public class Fragment_Add_Student extends Fragment implements View.OnClickListen
                     e.printStackTrace();
                 }
                 if (!inputValidation.isInputEditTextFilled(textInputEditTextName, textInputLayoutName, getString(R.string.error_message_name))) {
+                    return;
+                }
+                if (!inputValidation.isInputEditTextFilled(textInputEditTextBranch, textInputLayoutBranch, "Enter Student Branch")) {
                     return;
                 }
                 if (!inputValidation.isInputEditTextFilled(textInputEditTextContactNo, textInputLayoutContactNo, getString(R.string.error_message_email))) {
@@ -180,6 +187,7 @@ public class Fragment_Add_Student extends Fragment implements View.OnClickListen
                     student.setPassword(textInputEditTextPassword.getText().toString().trim());
                     student.setAddress(textInputEditTextAddress.getText().toString().trim());
                     student.setEmail(textInputEditTextEmail.getText().toString().trim());
+                    student.setBranch(textInputEditTextBranch.getText().toString().trim());
 
                     mDatabaseHandler.addStudent(student);
 
