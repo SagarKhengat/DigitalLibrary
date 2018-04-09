@@ -349,7 +349,7 @@ public class DatabaseHandler {
 			for (Student user:
 					mListAllStores) {
 
-				if (user.getName().equals(email) && user.getPassword().equals(password))
+				if (user.getStudentId().equals(email) && user.getPassword().equals(password))
 				{
 					b = true;
 				}
@@ -1187,7 +1187,7 @@ public class DatabaseHandler {
 			for (Faculty user:
 					mListAllStores) {
 
-				if (user.getName().equals(retailerName) && user.getPassword().equals(password))
+				if (user.getFacultyId().equals(retailerName) && user.getPassword().equals(password))
 				{
 					b = user;
 				}
