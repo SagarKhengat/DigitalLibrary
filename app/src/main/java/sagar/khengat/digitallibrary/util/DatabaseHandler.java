@@ -1350,7 +1350,7 @@ public class DatabaseHandler {
 			for (Student user:
 					mListAllStores) {
 
-				if (user.getName().equals(retailerName) && user.getPassword().equals(password))
+				if (user.getStudentId().equals(retailerName) && user.getPassword().equals(password))
 				{
 					b = user;
 				}
