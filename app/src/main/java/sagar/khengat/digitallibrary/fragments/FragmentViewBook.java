@@ -69,13 +69,14 @@ public class FragmentViewBook extends Fragment {
         }
         adapter = new CustomBook(bookList, getActivity(),new MyAdapterListener()
         {
+
             @Override
-            public void buttonViewOnClick(View v, final int position) {
+            public void issueOnClick(View v, int position) {
 
             }
 
             @Override
-            public void imageViewOnClick(View v, int position) {
+            public void rejectOnClick(View v, int position) {
 
             }
         });

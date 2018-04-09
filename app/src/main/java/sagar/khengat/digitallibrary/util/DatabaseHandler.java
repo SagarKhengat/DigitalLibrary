@@ -1263,6 +1263,33 @@ public class DatabaseHandler {
 		return bookList;
 	}
 
+	public List<Book> fnGetAllBooksForIssue()
+	{
+		List<Book> bookList = new ArrayList<>();
+		List<Book> mListAllStores = fnGetAllBook();
+		try {
+			QueryBuilder < Book, Integer> qb = bookDao.queryBuilder();
+
+			for (Book user:
+					mListAllStores) {
+
+				if (user.isAvailable())
+				{
+					bookList.add(user);
+				}
+				else
+				{
+
+				}
+
+			}
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return bookList;
+	}
 	public List<Book> getAvailableBooksofStudent(Student student)
 	{
 		List<Book> bookList = new ArrayList<>();
@@ -1476,6 +1503,20 @@ public class DatabaseHandler {
 		}
 	}
 	public void returnBookofFaculty(Book book, Faculty faculty)
+	{
+		try {
+			UpdateBuilder<Book, Integer> deleteBuilder = bookDao.updateBuilder();
+			deleteBuilder.updateColumnValue("bookStudent_id", null);
+			deleteBuilder.updateColumnValue("bookFaculty_id", null);
+			deleteBuilder.updateColumnValue("available", true);
+			deleteBuilder.where().eq("bookId", book.getBookId());
+			deleteBuilder.update();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void rejectBook(Book book)
 	{
 		try {
 			UpdateBuilder<Book, Integer> deleteBuilder = bookDao.updateBuilder();

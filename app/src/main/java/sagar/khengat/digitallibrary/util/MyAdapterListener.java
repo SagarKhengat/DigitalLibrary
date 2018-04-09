@@ -4,7 +4,6 @@ import android.view.View;
 
 
 public interface MyAdapterListener {
-    void buttonViewOnClick(View v, int position);
-    void imageViewOnClick(View v, int position);
-
+    void issueOnClick(View v, int position);
+    void rejectOnClick(View v, int position);
 }
