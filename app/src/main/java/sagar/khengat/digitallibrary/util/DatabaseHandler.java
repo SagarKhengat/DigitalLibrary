@@ -1273,7 +1273,7 @@ public class DatabaseHandler {
 			for (Book user:
 					mListAllStores) {
 
-				if (user.isAvailable())
+				if (!user.isAvailable())
 				{
 					bookList.add(user);
 				}
@@ -1299,16 +1299,13 @@ public class DatabaseHandler {
 
 			for (Book user:
 					mListAllStores) {
+				if(user.getBookStudent() != null) {
+					if (user.getBookStudent().getStudentId().equals(student.getStudentId())) {
+						bookList.add(user);
+					} else {
 
-				if (user.getBookStudent().getStudentId().equals(student.getStudentId()))
-				{
-					bookList.add(user);
+					}
 				}
-				else
-				{
-
-				}
-
 			}
 
 		} catch (Exception e) {
@@ -1327,16 +1324,14 @@ public class DatabaseHandler {
 
 			for (Book user:
 					mListAllStores) {
+				if (user.getBookFaculty() != null) {
+					if (user.getBookFaculty().getFacultyId().equals(faculty.getFacultyId())) {
+						bookList.add(user);
+					} else {
 
-				if (user.getBookFaculty().getFacultyId().equals(faculty.getFacultyId()))
-				{
-					bookList.add(user);
+					}
+
 				}
-				else
-				{
-
-				}
-
 			}
 
 		} catch (Exception e) {

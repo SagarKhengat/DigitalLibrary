@@ -85,7 +85,7 @@ public class Fragment_Add_Student extends Fragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_add_faculty, container, false);
+        view = inflater.inflate(R.layout.fragment_add_student, container, false);
         inputValidation = new InputValidation(getActivity());
 
         mDatabaseHandler = new DatabaseHandler(getActivity());
@@ -178,6 +178,7 @@ public class Fragment_Add_Student extends Fragment implements View.OnClickListen
                     student.setName(textInputEditTextName.getText().toString().trim());
                     student.setMobno(textInputEditTextContactNo.getText().toString().trim());
                     student.setPassword(textInputEditTextPassword.getText().toString().trim());
+                    student.setAddress(textInputEditTextAddress.getText().toString().trim());
                     student.setEmail(textInputEditTextEmail.getText().toString().trim());
 
                     mDatabaseHandler.addStudent(student);
